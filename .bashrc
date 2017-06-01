@@ -162,3 +162,6 @@ lock(){
 }
 alias sublime=sublime_text
 alias pycharm=pycharm.pl
+testing_func(){
+    sublime
+}
