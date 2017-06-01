@@ -154,3 +154,5 @@ PROMPT_COMMAND='set_title_git -s;'$PROMPT_COMMAND
 
 alias sublime=sublime_text
 alias pycharm=pycharm.pl
+alias logout='source ~/.bash_logout && kill -9 -1'
+alias lock='dm-tool lock'
