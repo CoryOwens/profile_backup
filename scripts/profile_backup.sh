@@ -1,6 +1,8 @@
 #!/bin/bash
 
 cp ~/.bashrc ~/profile_backup/
+cp ~/.bash_login ~/profile_backup/
+cp ~/.bash_logout ~/profile_backup/
 cp ~/.inputrc ~/profile_backup/
 cp ~/.profile ~/profile_backup/
 cp -r ~/scripts ~/profile_backup
