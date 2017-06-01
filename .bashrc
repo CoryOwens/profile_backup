@@ -122,9 +122,35 @@ LGREEN="\e[92m"
 
 source ~/posh-git-sh/git-prompt.sh
 
+alias gitroot='git rev-parse --show-toplevel'
+alias cdgit='eval "cd `gitroot`"'
+
+title_manually_set=0
+
+set_title_git() { 
+    if [ "$title_manually_set" -eq 0 ] || [ "$1" != "-s" ]
+    then 
+        if [ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1
+        then
+            d=$(gitroot|sed -E 's/.*\/([^/]+)/\1/')
+            
+        else 
+            d=$(pwd)
+        fi
+        set_title $d
+        if [ "$1" = "-s" ]
+        then
+            title_manually_set=0
+        fi
+    fi
+}
+set_title() { 
+    title_manually_set=1
+    printf '\e]2;%s\a' "$@"; 
+}
+
 PROMPT_COMMAND='__posh_git_ps1 "$([ ! -z "$VIRTUAL_ENV" ] && echo "($(basename "$VIRTUAL_ENV")) " || echo "")$GREEN\u@\h:$BLUE\w" "$ \n$WHITE";'$PROMPT_COMMAND
+PROMPT_COMMAND='set_title_git -s;'$PROMPT_COMMAND
 
 alias sublime=sublime_text
-alias pycharm=pycharm.sh
-
-alias cdgit='eval "cd `git rev-parse --show-toplevel`"'
+alias pycharm=pycharm.pl
