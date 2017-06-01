@@ -152,10 +152,13 @@ set_title() {
 PROMPT_COMMAND='__posh_git_ps1 "$([ ! -z "$VIRTUAL_ENV" ] && echo "($(basename "$VIRTUAL_ENV")) " || echo "")$GREEN\u@\h:$BLUE\w" "$ \n$WHITE";'$PROMPT_COMMAND
 PROMPT_COMMAND='set_title_git -s;'$PROMPT_COMMAND
 
-alias sublime=sublime_text
-alias pycharm=pycharm.pl
 logout(){
     source ~/.bash_logout
     kill -9 -1
 }
-alias lock='dm-tool lock'
+lock(){
+    source ~/.bash_logout
+    dm-tool lock
+}
+alias sublime=sublime_text
+alias pycharm=pycharm.pl
