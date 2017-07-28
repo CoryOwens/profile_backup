@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=10000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -151,6 +151,7 @@ set_title() {
 
 PROMPT_COMMAND='__posh_git_ps1 "$([ ! -z "$VIRTUAL_ENV" ] && echo "($(basename "$VIRTUAL_ENV")) " || echo "")$GREEN\u@\h:$BLUE\w" "$ \n$WHITE";'$PROMPT_COMMAND
 PROMPT_COMMAND='set_title_git -s;'$PROMPT_COMMAND
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 logout(){
     source ~/.bash_logout
@@ -162,6 +163,3 @@ lock(){
 }
 alias sublime=sublime_text
 alias pycharm=pycharm.pl
-testing_func(){
-    sublime
-}
