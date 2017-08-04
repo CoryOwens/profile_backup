@@ -163,3 +163,9 @@ lock(){
 }
 alias sublime=sublime_text
 alias pycharm=pycharm.pl
+alias less='less -S'
+git_find_and_replace(){
+    echo $1
+    echo $2
+    git grep -lIE "$1" | xargs sed -i "s/$1/$2/g"
+}

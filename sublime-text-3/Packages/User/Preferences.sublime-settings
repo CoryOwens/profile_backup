@@ -1,3 +1,7 @@
 {
-	"dpi_scale": 2.0
+	"dpi_scale": 2.0,
+	"ignored_packages":
+	[
+		"Vintage"
+	]
 }
