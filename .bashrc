@@ -47,12 +47,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
     else
-	color_prompt=
+    color_prompt=
     fi
 fi
 
@@ -161,8 +161,13 @@ lock(){
     source ~/.bash_logout
     dm-tool lock
 }
-alias sublime=sublime_text
-alias pycharm=pycharm.pl
+if [[ -n $SSH_CONNECTION ]]; then
+    alias subl=rmate
+    alias sublime=rmate
+else
+    alias sublime=sublime_text
+    alias pycharm=pycharm.pl
+fi
 alias less='less -S'
 git_find_and_replace(){
     echo $1

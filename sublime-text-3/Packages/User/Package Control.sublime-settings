@@ -5,6 +5,8 @@
 	],
 	"installed_packages":
 	[
+		"ANSIescape",
+		"Markdown Preview",
 		"Package Control",
 		"Pretty JSON"
 	]
