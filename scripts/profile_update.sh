@@ -8,3 +8,5 @@ cp ~/profile_backup/.bash_logout ~/
 cp ~/profile_backup/.inputrc ~/
 cp ~/profile_backup/.profile ~/
 cp -r ~/profile_backup/scripts ~/
+cp -r ~/profile_backup/.config ~/
+cp -r ~/profile_backup/.PyCharm2017.2 ~/

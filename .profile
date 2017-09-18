@@ -27,8 +27,3 @@ PATH=$PATH:/opt/sublime_text/
 # Fixes issue where Pycharm becomes unresponsive to keyboard
 # See https://youtrack.jetbrains.com/issue/IDEA-78860
 export IBUS_ENABLE_SYNC_MODE=1 
-# xrandr \
-# --output DP-5 --auto --primary \
-# --output DP-0 --auto --right-of DP-5 \
-# --output DP-2 --auto --right-of DP-0 \
-# --output HDMI-0 --auto --right-of DP-2;
