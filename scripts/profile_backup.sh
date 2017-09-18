@@ -9,6 +9,7 @@ cp -r ~/scripts ~/profile_backup
 mkdir -p ~/profile_backup/.config
 cp -r ~/.config/i3 ~/profile_backup/.config
 cp -r ~/.config/i3status ~/profile_backup/.config
+cp -r ~/.config/terminator ~/profile_backup/.config
 mkdir -p ~/profile_backup/.config/sublime-text-3
 cp -r ~/.config/sublime-text-3/Installed\ Packages ~/profile_backup/.config/sublime-text-3
 cp -r ~/.config/sublime-text-3/Packages ~/profile_backup/.config/sublime-text-3
