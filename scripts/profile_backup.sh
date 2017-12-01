@@ -19,3 +19,4 @@ cd ~/profile_backup
 CURDATE=`date +%Y-%m-%d`
 git add .
 git commit -am "Profile updates: $CURDATE"
+git push
