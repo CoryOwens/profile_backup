@@ -164,7 +164,9 @@ focus_follows_mouse no
 
 bindsym $mod+l exec i3lock -c 000000
 exec xrandr --output DP-5 --auto --primary --output DP-0 --auto --right-of DP-5 --output DP-2 --auto --right-of DP-0 --output HDMI-0 --auto --right-of DP-2;
-exec i3-msg 'rename workspace 1 to 4a'
-exec i3-msg 'rename workspace 4 to 1'
-exec i3-msg 'rename workspace 4a to 4'
+workspace 1 output DP-5
+workspace 2 output DP-0
+workspace 3 output DP-2
+workspace 4 output HDMI-0
+
 exec xsetroot -solid "#000000"

@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"ANSIescape",
+		"Indent XML",
 		"Markdown Preview",
 		"Package Control",
 		"Pretty JSON"

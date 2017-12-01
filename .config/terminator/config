@@ -3,16 +3,17 @@
   title_hide_sizetext = True
   title_transmit_bg_color = "#03c800"
 [keybindings]
-  close_term = <Primary>w
-  copy = <Primary>c
-  cycle_next = <Primary><Alt>Tab
   cycle_prev = <Primary><Shift><Alt>Tab
-  new_tab = <Primary>t
   next_tab = <Primary>Tab
-  page_down = <Shift>Page_Down
-  page_up = <Shift>Page_Up
-  paste = <Primary>v
   prev_tab = <Primary><Shift>Tab
+  close_term = <Primary>w
+  cycle_next = <Primary><Alt>Tab
+  new_tab = <Primary>t
+  copy = <Primary>c
+  paste = <Primary>v
+[profiles]
+  [[default]]
+    background_image = None
 [layouts]
   [[default]]
     [[[child1]]]
@@ -22,6 +23,3 @@
       parent = ""
       type = Window
 [plugins]
-[profiles]
-  [[default]]
-    background_image = None

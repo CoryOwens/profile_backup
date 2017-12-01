@@ -3,5 +3,7 @@
 	"ignored_packages":
 	[
 		"Vintage"
-	]
+	],
+	"tab_completion": false,
+	"auto_complete": false
 }

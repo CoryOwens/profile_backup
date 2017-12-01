@@ -165,6 +165,8 @@ if [[ -n $SSH_CONNECTION ]]; then
     alias subl=rmate
     alias sublime=rmate
 else
+    alias subl='subl -a'
+    alias sublime='subl -a'
     alias pycharm=pycharm.pl
 fi
 alias less='less -S'
