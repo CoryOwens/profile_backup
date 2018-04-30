@@ -162,6 +162,16 @@ bar {
 
 focus_follows_mouse no
 
+# From https://faq.i3wm.org/question/3747/enabling-multimedia-keys.1.html
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set 'Master' 10%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set 'Master' 10%-
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 bindsym $mod+l exec i3lock -c 000000
 exec xrandr --output DP-5 --auto --primary --output DP-0 --auto --right-of DP-5 --output DP-2 --auto --right-of DP-0 --output HDMI-0 --auto --right-of DP-2;
 workspace 1 output DP-5

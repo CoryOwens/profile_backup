@@ -22,6 +22,7 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 PATH=$PATH:/opt/sublime_text/
+PATH=$PATH:/snap/bin
 # PATH=$PATH:/opt/pycharm-2016.3.2/bin/
 
 # Fixes issue where Pycharm becomes unresponsive to keyboard

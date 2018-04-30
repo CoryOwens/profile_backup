@@ -1,13 +1,19 @@
 {
 	"bootstrapped": true,
+	"debug": true,
 	"in_process_packages":
 	[
 	],
 	"installed_packages":
 	[
 		"ANSIescape",
+		"Color Highlighter",
+		"CopyWithLineNumbersReloaded",
 		"Indent XML",
+		"JsonTree",
+		"Markdown Extended",
 		"Markdown Preview",
+		"MarkdownLivePreview",
 		"Package Control",
 		"Pretty JSON"
 	]

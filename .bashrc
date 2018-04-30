@@ -168,6 +168,7 @@ else
     alias subl='subl -a'
     alias sublime='subl -a'
     alias pycharm=pycharm.pl
+    alias calc=gnome-calculator
 fi
 alias less='less -S'
 git_find_and_replace(){

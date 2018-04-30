@@ -1,9 +1,9 @@
 {
+	"auto_complete": false,
 	"dpi_scale": 2.0,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
-	"tab_completion": false,
-	"auto_complete": false
+	"tab_completion": false
 }
