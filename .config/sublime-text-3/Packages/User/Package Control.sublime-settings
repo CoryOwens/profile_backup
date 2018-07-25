@@ -7,14 +7,19 @@
 	"installed_packages":
 	[
 		"ANSIescape",
+		"Chain of Command",
 		"Color Highlighter",
 		"CopyWithLineNumbersReloaded",
+		"Dockerfile Syntax Highlighting",
+		"HTML-CSS-JS Prettify",
+		"ImprovedMacros",
 		"Indent XML",
-		"JsonTree",
+		"JSONLint",
 		"Markdown Extended",
-		"Markdown Preview",
 		"MarkdownLivePreview",
+		"MarkdownPreview",
 		"Package Control",
-		"Pretty JSON"
+		"Pretty JSON",
+		"PyYapf Python Formatter"
 	]
 }

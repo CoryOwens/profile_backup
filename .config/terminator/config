@@ -1,19 +1,16 @@
 [global_config]
-  geometry_hinting = False
+  enabled_plugins = CustomCommandsMenu, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   title_hide_sizetext = True
   title_transmit_bg_color = "#03c800"
 [keybindings]
-  cycle_prev = <Primary><Shift><Alt>Tab
-  next_tab = <Primary>Tab
-  prev_tab = <Primary><Shift>Tab
   close_term = <Primary>w
-  cycle_next = <Primary><Alt>Tab
-  new_tab = <Primary>t
   copy = <Primary>c
+  cycle_next = <Primary><Alt>Tab
+  cycle_prev = <Primary><Shift><Alt>Tab
+  new_tab = <Primary>t
+  next_tab = <Primary>Tab
   paste = <Primary>v
-[profiles]
-  [[default]]
-    background_image = None
+  prev_tab = <Primary><Shift>Tab
 [layouts]
   [[default]]
     [[[child1]]]
@@ -23,3 +20,11 @@
       parent = ""
       type = Window
 [plugins]
+  [[EditorPlugin]]
+    command = gvim --remote-silent +{line} {filepath}
+    groups = file line
+    match = ([^ \t\n\r\f\v:]+?):([0-9]+)
+[profiles]
+  [[default]]
+    background_image = None
+    cursor_color = "#aaaaaa"

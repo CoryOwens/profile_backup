@@ -8,6 +8,16 @@ case $- in
       *) return;;
 esac
 
+# Bind some keys that get mangled by different terminal emulators
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
+bind '"\e[C":forward-char'
+bind '"\e[D":backward-char'
+bind '"\eOC":forward-word'
+bind '"\eOD":backward-word'
+bind '"\C-h":backward-kill-word'
+bind '"ÿ":backward-kill-word'
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -147,6 +157,9 @@ set_title_git() {
 set_title() { 
     title_manually_set=1
     printf '\e]2;%s\a' "$@"; 
+    if ! [[ -z ${TMUX+x} ]]; then 
+        tmux rename-window "$@"; 
+    fi
 }
 
 PROMPT_COMMAND='__posh_git_ps1 "$([ ! -z "$VIRTUAL_ENV" ] && echo "($(basename "$VIRTUAL_ENV")) " || echo "")$GREEN\u@\h:$BLUE\w" "$ \n$WHITE";'$PROMPT_COMMAND
@@ -176,3 +189,39 @@ git_find_and_replace(){
     echo $2
     git grep -lIE "$1" | xargs sed -i "s/$1/$2/g"
 }
+
+## Uncomment to launch TMUX on startup, and cleanup on close. 
+# trap _trap_exit EXIT
+# if command -v tmux>/dev/null; then
+#     if [[ ! $TERM =~ screen ]] && [ -z $TMUX ] 
+#     then
+#         export tmux_cleanup_id=$$
+#         # touch "$HOME/$tmux_cleanup_id.log"
+#         # echo "Startup PID: $tmux_cleanup_id" >> "$HOME/$tmux_cleanup_id.log"
+#         exec tmux new-session -s $tmux_cleanup_id
+#     fi
+# fi
+
+# _trap_exit() { 
+#     if [[ "$SHLVL" -eq 2 ]]
+#     then
+#         # echo "trap_exit PID: $tmux_cleanup_id" >> "$HOME/$tmux_cleanup_id.log"
+#         sessions=$(tmux list-session)
+#         # echo "Sessions: $sessions" >> "$HOME/$tmux_cleanup_id.log"
+#         session_ids=$(echo "$sessions" | awk '{print $1}' | sed -r 's/://')
+#         # echo "Session IDs: $session_ids" >> "$HOME/$tmux_cleanup_id.log"
+#         session=$(echo $session_ids | grep $tmux_cleanup_id)
+#         # echo "Session: $session" >> "$HOME/$tmux_cleanup_id.log"
+#         if [[ "$session" != '' ]]
+#         then
+#             # echo "Killing session." >> "$HOME/$tmux_cleanup_id.log"
+#             tmux kill-session -t $tmux_cleanup_id;
+#         else
+#             # echo "No session to kill." >> "$HOME/$tmux_cleanup_id.log"
+#             test
+#         fi
+#     else
+#         echo "Exit SHLVL $SHLVL"
+#     fi
+# }
+
